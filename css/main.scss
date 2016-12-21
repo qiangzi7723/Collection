@@ -1,0 +1,97 @@
+$bgc:#221f4e;
+.img_contain {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.img_cover {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#game_div {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: $bgc;
+    header {
+        height: 0.83rem;
+    }
+    main {
+        .swiper {
+            .swiper-container {
+                height: 3rem;
+                .swiper-wrapper {
+                    height: 100%;
+                    display: flex;
+                    display: -webkit-flex;
+                    .swiper-slide {
+                        float: left;
+                        width: 2.22rem;
+                        height: 100%;
+                        margin: 0;
+                        flex-shrink: 0;
+                        @extend .img_contain;
+                        div {
+                            width: 100%;
+                            height: 100%;
+                            @extend .img_contain;
+                        }
+                    }
+                }
+            }
+        }
+        .bar-container {
+            height: 0.53rem;
+            margin-top: 0.3rem;
+            position: relative;
+            .swiper-container {
+                height: 100%;
+                width: 2.88rem;
+                overflow: hidden;
+                margin: 0 auto;
+                .swiper-wrapper {
+                    height: 100%;
+                    .bar {
+                    	float: left;
+                        width: 2.88rem;
+                        height: 100%;
+                    }
+                }
+            }
+            .bar {
+                height: 100%;
+                width: 2.88rem;
+                margin: 0 auto;
+                display: -webkit-flex;
+                display: flex;
+                justify-content: space-between;
+                span {
+                    width: 0.53rem;
+                    height: 0.53rem;
+                    @extend .img_contain;
+                }
+            }
+            .bow {
+                position: absolute;
+                width: 0.26rem;
+                height: 0.45rem;
+                @extend .img_contain;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+                display: none;
+            }
+            .left-bow {
+                left: 0.1rem;
+                background-image: url('../images/left_bow.png');
+            }
+            .right-bow {
+                right: 0.1rem;
+                background-image: url('../images/right_bow.png');
+            }
+        }
+    }
+}

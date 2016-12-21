@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
+    </style>
+    <link rel="stylesheet" href="css/main.css">
+    <script src='scripts/zepto.js'></script>
+    <script src='scripts/swiper.jquery.js'></script>
+    <script src='scripts/main.js'></script>
+</head>
+
+<body>
+    <div id="game_div">
+        <header></header>
+        <main>
+            <div class="swiper">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper"></div>
+                </div>
+            </div>
+            <div class="bar-container">
+                <div class="bow left-bow"></div>
+                <div class="bow right-bow"></div>
+            </div>
+        </main>
+    </div>
+    <script>
+    //适配平台rem设置
+    var container_width = 300;
+
+    function changeHTML() {
+        var width = window.innerWidth;
+        if (width > 700) {
+            container_width = window.innerWidth * 0.234;
+            container_width = (container_width < 300) ? 300 : container_width;
+            var size = container_width * 100 / 375;
+        } else {
+            var size = width * 100 / 375;
+        }
+        document.querySelector('html').style.fontSize = size + 'px';
+    }
+    changeHTML();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+    }
+    
+    .swiper-container {
+        width: 3.75rem;
+        height: 2rem;
+        transform-origin: center center;
+        -webkit-transform-origin: center center;
+    }
+    
+    .swiper-container .swiper-slide {
+        width: 2rem;
+    }
+    
+    .swiper-slide:nth-of-type(1) {
+        background-color: #CA4040;
+    }
+    
+    .swiper-slide:nth-of-type(2) {
+        background-color: #FF8604;
+    }
+    
+    .swiper-slide:nth-of-type(3) {
+        background-color: #4390EE;
+    }
+    
+    .swiper-slide:nth-of-type(4) {
+        background-color: #FF8604;
+    }
+    
+    .swiper-slide:nth-of-type(5) {
+        background-color: #4390EE;
+    }
+    </style>
+    <link rel="stylesheet" href="../lib/swiper.css">
+    <script src='../lib/zepto.js'></script>
+    <script src='../lib/swiper.jquery.js'></script>
+</head>
+
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <script>
+    //适配平台rem设置
+    var container_width = 300;
+
+    function changeHTML() {
+        var width = window.innerWidth;
+        if (width > 700) {
+            container_width = window.innerWidth * 0.234;
+            container_width = (container_width < 300) ? 300 : container_width;
+            var size = container_width * 100 / 375;
+        } else {
+            var size = width * 100 / 375;
+        }
+        document.querySelector('html').style.fontSize = size + 'px';
+    }
+    changeHTML();
+    </script>
+    <script>
+    var slide = $('.swiper-slide');
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+
+        initialSlide: 0,
+
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        paginationClickable: true,
+        spaceBetween: 30,
+
+        freeMode: false,
+
+        onSlideChangeStart: function(swiper) {
+            slide.eq(swiper.activeIndex).css({
+                'transform': 'scale(1)',
+                'transition':'0.3s'
+            }).siblings().css({
+                'transform': 'scale(0.5)',
+                'transition':'0.3s'
+            })
+            console.log(swiper.activeIndex);
+        },
+        onInit: function() {
+            slide.css({
+                'transform': 'scale(0.5)',
+            })
+        },
+    });
+    </script>
+</body>
+
+</html>
