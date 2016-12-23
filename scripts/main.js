@@ -8,11 +8,17 @@ $(function() {
     } else {
         event_tap = 'click';
     }
-
+    //配置图片
     var config = {
         swiper: ['images/swiper_zhu.png', 'images/swiper_xin.png', 'images/swiper_nian.png', 'images/swiper_kuai.png', 'images/swiper_le.png', 'images/swiper_zhu.png'],
-        bar: ['images/bar_zhu.png', 'images/bar_xin.png', 'images/bar_nian.png', 'images/bar_kuai.png', 'images/bar_le.png', 'images/bar_zhu.png']
+        bar: ['images/bar_zhu.png', 'images/bar_xin.png', 'images/bar_nian.png', 'images/bar_kuai.png', 'images/bar_le.png', 'images/bar_zhu.png'],
+        mask: ['images/mask_zhu.png', 'images/mask_xin.png', 'images/mask_nian.png', 'images/mask_kuai.png', 'images/mask_le.png', 'images/mask_zhu.png']
     };
+    // 配置当前已经集到了的字
+    var collectionIndex = [1, 0, 1, 1, 0, 1];
+
+
+
     var leng = config.bar.length;
 
     var Collection = function() {
@@ -58,7 +64,9 @@ $(function() {
         // 配置大图
         var swiper_wrapper = $('#game_div .swiper .swiper-wrapper');
         for (var i = 0, len = config.swiper.length; i < len; i++) {
+            if (!collectionIndex[i]) continue;
             var slide = $('<div class="swiper-slide"></div>');
+            slide.attr('data-index',i);
             // 多起一层div存放图片，因为图片跟slide放在同一个style里面在手机下变换样式的时候会闪 
             var element = $('<div></div>');
             element.css('background-image', 'url(' + config.swiper[i] + ')');
@@ -72,10 +80,14 @@ $(function() {
         if (leng <= 5) {
             // 如果长度小于5此时不需要做小图的轮播
             bar = $('<div class="bar"></div>');
-            for (var i = 0, len = config.bar.length; i < len; i++) {
+            for (var i = 0; i < leng; i++) {
                 var element = $('<span></span>');
                 element.attr('data-index', i);
-                element.css('background-image', 'url(' + config.bar[i] + ')');
+                if (collectionIndex[i]) {
+                    element.css('background-image', 'url(' + config.bar[i] + ')');
+                } else {
+                    element.css('background-image', 'url(' + config.mask[i] + ')');
+                }
                 bar.append(element);
             }
             bar_container.prepend(bar);
@@ -89,8 +101,12 @@ $(function() {
                     swiper_wrapper.append(bar);
                 }
                 var element = $('<span></span>');
-                element.attr('data-index', i);
-                element.css('background-image', 'url(' + config.bar[i] + ')');
+                element.attr('data-index',i);
+                if (collectionIndex[i]) {
+                    element.css('background-image', 'url(' + config.bar[i] + ')');
+                } else {
+                    element.css('background-image', 'url(' + config.mask[i] + ')');
+                }
                 bar.append(element);
             }
             swiper_container.append(swiper_wrapper);
@@ -138,7 +154,7 @@ $(function() {
 
     // 初始化slide插件
     Collection.prototype.newSlide = function() {
-        var self=this;
+        var self = this;
         var slide = $('.swiper-slide');
         // 初始的索引
         var initIndex = 1;
@@ -150,7 +166,7 @@ $(function() {
             paginationClickable: true,
             spaceBetween: 30,
             onSlideChangeStart: function(swiper) {
-                var index=swiper.activeIndex;
+                var index = swiper.activeIndex;
                 slide.eq(index).css({
                     'transform': 'scale(1)',
                     '-webkit-transform': 'scale(1)',
@@ -162,7 +178,7 @@ $(function() {
                     'transition': 'transform 0.3s',
                     '-webkit-transition': 'transform 0.3s'
                 });
-                self.barSwiper.slideTo(Math.floor(index/5));
+                self.barSwiper.slideTo(Math.floor(index / 5));
             },
             onInit: function() {
                 slide.eq(initIndex).css({

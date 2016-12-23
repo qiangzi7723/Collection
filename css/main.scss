@@ -1,4 +1,8 @@
 $bgc:#221f4e;
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
 .img_contain {
     background-position: center center;
     background-repeat: no-repeat;
@@ -55,7 +59,7 @@ $bgc:#221f4e;
                 .swiper-wrapper {
                     height: 100%;
                     .bar {
-                    	float: left;
+                        float: left;
                         width: 2.88rem;
                         height: 100%;
                     }

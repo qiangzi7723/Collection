@@ -1,3 +1,6 @@
+* {
+  -webkit-tap-highlight-color: transparent; }
+
 .img_contain, #game_div main .swiper .swiper-container .swiper-wrapper .swiper-slide, #game_div main .swiper .swiper-container .swiper-wrapper .swiper-slide div, #game_div main .bar-container .bar span, #game_div main .bar-container .bow {
   background-position: center center;
   background-repeat: no-repeat;
