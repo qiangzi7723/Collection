@@ -2,7 +2,7 @@
   -webkit-tap-highlight-color: transparent;
   box-sizing: border-box; }
 
-.img_contain, #game_div .main-page header .totalText, #game_div .main-page main .swiper .swiper-container .swiper-wrapper .swiper-slide, #game_div .main-page main .swiper .swiper-container .swiper-wrapper .swiper-slide div, #game_div .main-page main .bar-container .swiper-container .swiper-wrapper .bar span, #game_div .main-page main .bar-container .swiper-container .swiper-wrapper .bar span i, #game_div .main-page main .bar-container .bow, #game_div .main-page footer .me .friend-help, #game_div .main-page footer .me .group-btn div, #game_div .main-page footer .other .launch, #game_div .main-page footer .other .condition, #game_div .condition-page .top-banner .good-icon, #game_div .condition-page .top-banner .close-icon, #game_div .first-collection-me div:nth-of-type(1), #game_div .first-collection-me .know-btn, #game_div .first-collection-other div:nth-of-type(1), #game_div .first-collection-other .watch-condition, #game_div .first-collection-other .launch, #game_div .collection-already-other .watch-condition, #game_div .collection-already-other .launch, #game_div .collection-public-platform .attention-public-platform, #game_div .collection-public-platform .watch-condition, #game_div .full-collection-me div:nth-of-type(1), #game_div .full-collection-me .know-btn, #game_div .full-collection-other div:nth-of-type(1), #game_div .full-collection-other .watch-condition, #game_div .full-collection-other .launch {
+.img_contain, #game_div .main-page header .totalText, #game_div .main-page main .swiper .swiper-container .swiper-wrapper .swiper-slide, #game_div .main-page main .swiper .swiper-container .swiper-wrapper .swiper-slide div, #game_div .main-page main .bar-container .swiper-container .swiper-wrapper .bar span, #game_div .main-page main .bar-container .swiper-container .swiper-wrapper .bar span i, #game_div .main-page main .bar-container .bow, #game_div .main-page footer .me .friend-help, #game_div .main-page footer .me .group-btn div, #game_div .main-page footer .other .launch, #game_div .main-page footer .other .condition, #game_div .condition-page .top-banner .good-icon, #game_div .condition-page .top-banner .close-icon, #game_div .award-page .top-banner .gift-icon, #game_div .award-page .top-banner .close-icon, #game_div .award-page .award-list .list .list-left div, #game_div .award-page .award-list .list .list-right .list-top .collection-container .collection-wrap div, #game_div .first-collection-me div:nth-of-type(1), #game_div .first-collection-me .know-btn, #game_div .first-collection-other div:nth-of-type(1), #game_div .first-collection-other .watch-condition, #game_div .first-collection-other .launch, #game_div .collection-already-other .watch-condition, #game_div .collection-already-other .launch, #game_div .collection-public-platform .attention-public-platform, #game_div .collection-public-platform .watch-condition, #game_div .full-collection-me div:nth-of-type(1), #game_div .full-collection-me .know-btn, #game_div .full-collection-other div:nth-of-type(1), #game_div .full-collection-other .watch-condition, #game_div .full-collection-other .launch {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain; }
@@ -12,7 +12,7 @@
   background-repeat: no-repeat;
   background-size: cover; }
 
-.mask, #game_div .main-page, #game_div .condition-page, #game_div .first-collection-me, #game_div .first-collection-other, #game_div .collection-already-other, #game_div .collection-public-platform, #game_div .full-collection-me, #game_div .full-collection-other {
+.mask, #game_div .main-page, #game_div .condition-page, #game_div .award-page, #game_div .first-collection-me, #game_div .first-collection-other, #game_div .collection-already-other, #game_div .collection-public-platform, #game_div .full-collection-me, #game_div .full-collection-other, #game_div .mask-mask {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -24,129 +24,104 @@
   overflow: hidden;
   width: 100%;
   height: 100%;
-  z-index: 10;
   background-image: url("../images/bg.png"); }
-  #game_div .main-page header {
-    overflow: hidden;
-    height: 0.76rem; }
-    #game_div .main-page header .timeText {
-      font-size: 0.16rem;
-      color: #fff;
-      text-align: center;
-      margin: 0.14rem 0 0.12rem; }
-    #game_div .main-page header .totalText {
-      font-size: 0.14rem;
-      color: #caa072;
-      text-align: center;
-      width: 2.12rem;
-      height: 0.27rem;
-      line-height: 0.27rem;
-      margin: 0 auto;
-      background-image: url("../images/totalText.png"); }
-  #game_div .main-page main .swiper .swiper-container {
-    height: 2.9rem; }
-    #game_div .main-page main .swiper .swiper-container .swiper-wrapper {
-      height: 100%;
-      display: flex;
-      display: -webkit-flex; }
-      #game_div .main-page main .swiper .swiper-container .swiper-wrapper .swiper-slide {
-        float: left;
-        width: 2.83rem;
-        height: 100%;
-        margin: 0;
-        flex-shrink: 0; }
-        #game_div .main-page main .swiper .swiper-container .swiper-wrapper .swiper-slide div {
-          width: 100%;
-          height: 100%; }
-  #game_div .main-page main .bar-container {
-    position: relative; }
-    #game_div .main-page main .bar-container .swiper-container {
-      box-sizing: content-box;
-      height: 0.57rem;
-      padding: 0.12rem 0 0.02rem;
-      width: 2.88rem;
-      overflow-x: hidden;
-      margin: 0 auto; }
-      #game_div .main-page main .bar-container .swiper-container .swiper-wrapper {
-        height: 100%; }
-        #game_div .main-page main .bar-container .swiper-container .swiper-wrapper .bar {
-          float: left;
-          padding: 0 0.04rem;
-          height: 100%;
-          width: 2.88rem;
-          margin: 0 auto;
-          display: -webkit-flex;
-          display: flex;
-          justify-content: space-between; }
-          #game_div .main-page main .bar-container .swiper-container .swiper-wrapper .bar span {
-            position: relative;
-            width: 0.53rem;
-            height: 0.53rem; }
-            #game_div .main-page main .bar-container .swiper-container .swiper-wrapper .bar span i {
-              left: -0.02rem;
-              top: -0.02rem;
-              width: 0.57rem;
-              height: 0.57rem;
-              position: absolute;
-              z-index: 1; }
-            #game_div .main-page main .bar-container .swiper-container .swiper-wrapper .bar span div {
-              font-size: 0.12rem;
-              position: absolute;
-              z-index: 2;
-              color: #fff;
-              font-style: normal;
-              background-color: #ea5748;
-              right: -0.04rem;
-              top: -0.12rem;
-              padding: 0.02rem 0.04rem 0.01rem 0.06rem;
-              border-radius: 0.1rem;
-              border: 0.02rem solid #fff;
-              letter-spacing: 0.01rem; }
-            #game_div .main-page main .bar-container .swiper-container .swiper-wrapper .bar span .select {
-              background-image: url("../images/select.png"); }
-    #game_div .main-page main .bar-container .bow {
-      position: absolute;
-      width: 0.26rem;
-      height: 0.45rem;
-      top: 50%;
-      transform: translateY(-50%);
-      cursor: pointer;
-      display: none; }
-    #game_div .main-page main .bar-container .left-bow {
-      left: 0.1rem;
-      background-image: url("../images/left_bow.png"); }
-    #game_div .main-page main .bar-container .right-bow {
-      right: 0.1rem;
-      background-image: url("../images/right_bow.png"); }
-  #game_div .main-page footer {
-    overflow: hidden; }
-    #game_div .main-page footer .me .friend-help {
-      font-size: 0.2rem;
-      line-height: 0.51rem;
-      width: 1.41rem;
-      height: 0.51rem;
-      color: #ff7034;
-      text-align: center;
-      margin: 0.1rem auto 0.17rem;
-      background-image: url("../images/yellow_btn.png"); }
-    #game_div .main-page footer .me .group-btn {
-      height: 0.34rem;
-      width: 100%;
-      font-size: 0;
-      text-align: center; }
-      #game_div .main-page footer .me .group-btn div {
-        background-image: url("../images/red_btn.png");
-        width: 0.96rem;
-        height: 100%;
-        line-height: 0.34rem;
-        text-align: center;
+  #game_div .main-page {
+    z-index: 1; }
+    #game_div .main-page header {
+      overflow: hidden;
+      height: 0.76rem; }
+      #game_div .main-page header .timeText {
         font-size: 0.16rem;
-        color: #f7b860;
-        display: inline-block;
-        margin: 0 0.05rem; }
-    #game_div .main-page footer .other {
-      display: none; }
-      #game_div .main-page footer .other .launch {
+        color: #fff;
+        text-align: center;
+        margin: 0.14rem 0 0.12rem; }
+      #game_div .main-page header .totalText {
+        font-size: 0.14rem;
+        color: #caa072;
+        text-align: center;
+        width: 2.12rem;
+        height: 0.27rem;
+        line-height: 0.27rem;
+        margin: 0 auto;
+        background-image: url("../images/totalText.png"); }
+    #game_div .main-page main .swiper .swiper-container {
+      height: 2.9rem; }
+      #game_div .main-page main .swiper .swiper-container .swiper-wrapper {
+        height: 100%;
+        display: flex;
+        display: -webkit-flex; }
+        #game_div .main-page main .swiper .swiper-container .swiper-wrapper .swiper-slide {
+          float: left;
+          width: 2.83rem;
+          height: 100%;
+          margin: 0;
+          flex-shrink: 0; }
+          #game_div .main-page main .swiper .swiper-container .swiper-wrapper .swiper-slide div {
+            width: 100%;
+            height: 100%; }
+    #game_div .main-page main .bar-container {
+      position: relative; }
+      #game_div .main-page main .bar-container .swiper-container {
+        box-sizing: content-box;
+        height: 0.57rem;
+        padding: 0.12rem 0 0.02rem;
+        width: 2.88rem;
+        overflow-x: hidden;
+        margin: 0 auto; }
+        #game_div .main-page main .bar-container .swiper-container .swiper-wrapper {
+          height: 100%; }
+          #game_div .main-page main .bar-container .swiper-container .swiper-wrapper .bar {
+            float: left;
+            padding: 0 0.04rem;
+            height: 100%;
+            width: 2.88rem;
+            margin: 0 auto;
+            display: -webkit-flex;
+            display: flex;
+            justify-content: space-between; }
+            #game_div .main-page main .bar-container .swiper-container .swiper-wrapper .bar span {
+              position: relative;
+              width: 0.53rem;
+              height: 0.53rem; }
+              #game_div .main-page main .bar-container .swiper-container .swiper-wrapper .bar span i {
+                left: -0.02rem;
+                top: -0.02rem;
+                width: 0.57rem;
+                height: 0.57rem;
+                position: absolute;
+                z-index: 1; }
+              #game_div .main-page main .bar-container .swiper-container .swiper-wrapper .bar span div {
+                font-size: 0.12rem;
+                position: absolute;
+                z-index: 2;
+                color: #fff;
+                font-style: normal;
+                background-color: #ea5748;
+                right: -0.04rem;
+                top: -0.12rem;
+                padding: 0.02rem 0.04rem 0.01rem 0.06rem;
+                border-radius: 0.1rem;
+                border: 0.02rem solid #fff;
+                letter-spacing: 0.01rem; }
+              #game_div .main-page main .bar-container .swiper-container .swiper-wrapper .bar span .select {
+                background-image: url("../images/select.png"); }
+      #game_div .main-page main .bar-container .bow {
+        position: absolute;
+        width: 0.26rem;
+        height: 0.45rem;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        display: none; }
+      #game_div .main-page main .bar-container .left-bow {
+        left: 0.1rem;
+        background-image: url("../images/left_bow.png"); }
+      #game_div .main-page main .bar-container .right-bow {
+        right: 0.1rem;
+        background-image: url("../images/right_bow.png"); }
+    #game_div .main-page footer {
+      overflow: hidden; }
+      #game_div .main-page footer .me .friend-help {
         font-size: 0.2rem;
         line-height: 0.51rem;
         width: 1.41rem;
@@ -155,16 +130,43 @@
         text-align: center;
         margin: 0.1rem auto 0.17rem;
         background-image: url("../images/yellow_btn.png"); }
-      #game_div .main-page footer .other .condition {
-        background-image: url("../images/red_btn.png");
-        width: 0.96rem;
-        height: 100%;
-        line-height: 0.34rem;
-        text-align: center;
-        font-size: 0.16rem;
-        color: #f7b860;
-        margin: 0 auto; }
+      #game_div .main-page footer .me .group-btn {
+        height: 0.34rem;
+        width: 100%;
+        font-size: 0;
+        text-align: center; }
+        #game_div .main-page footer .me .group-btn div {
+          background-image: url("../images/red_btn.png");
+          width: 0.96rem;
+          height: 100%;
+          line-height: 0.34rem;
+          text-align: center;
+          font-size: 0.16rem;
+          color: #f7b860;
+          display: inline-block;
+          margin: 0 0.05rem; }
+      #game_div .main-page footer .other {
+        display: none; }
+        #game_div .main-page footer .other .launch {
+          font-size: 0.2rem;
+          line-height: 0.51rem;
+          width: 1.41rem;
+          height: 0.51rem;
+          color: #ff7034;
+          text-align: center;
+          margin: 0.1rem auto 0.17rem;
+          background-image: url("../images/yellow_btn.png"); }
+        #game_div .main-page footer .other .condition {
+          background-image: url("../images/red_btn.png");
+          width: 0.96rem;
+          height: 100%;
+          line-height: 0.34rem;
+          text-align: center;
+          font-size: 0.16rem;
+          color: #f7b860;
+          margin: 0 auto; }
   #game_div .condition-page {
+    display: none;
     z-index: 11;
     background-color: #fff; }
     #game_div .condition-page .top-banner {
@@ -221,6 +223,119 @@
           width: 0.44rem;
           height: 0.44rem;
           background-image: url("../images/bar_le.png"); }
+  #game_div .award-page {
+    display: none;
+    z-index: 11;
+    background-color: #fff; }
+    #game_div .award-page .top-banner {
+      height: 0.55rem;
+      border-bottom: 0.02rem solid #f3f3f3;
+      font-size: 0.2rem;
+      line-height: 0.55rem;
+      text-align: center;
+      position: relative;
+      margin-bottom: 0.12rem; }
+      #game_div .award-page .top-banner .gift-icon {
+        position: absolute;
+        top: 0.1rem;
+        left: 0.2rem;
+        width: 0.37rem;
+        height: 0.37rem;
+        background-image: url("../images/icon_gift.png"); }
+      #game_div .award-page .top-banner .close-icon {
+        position: absolute;
+        top: 0.1rem;
+        right: 0.18rem;
+        width: 0.37rem;
+        height: 0.37rem;
+        background-image: url("../images/icon_close.png"); }
+    #game_div .award-page .award-list {
+      padding: 0 0.14rem; }
+      #game_div .award-page .award-list .list {
+        height: 0.96rem;
+        border: 0.01rem solid #f3f3f3;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 0.06rem; }
+        #game_div .award-page .award-list .list .list-left {
+          float: left;
+          width: 0.78rem;
+          height: 100%; }
+          #game_div .award-page .award-list .list .list-left div {
+            width: 0.6rem;
+            height: 0.6rem;
+            margin: 0.18rem auto 0;
+            background-image: url("../images/icon2.png"); }
+        #game_div .award-page .award-list .list .list-right {
+          position: absolute;
+          width: 2.69rem;
+          height: 100%;
+          left: 0.78rem; }
+          #game_div .award-page .award-list .list .list-right > div {
+            height: 50%;
+            width: 100%;
+            padding: 0 0.08rem; }
+          #game_div .award-page .award-list .list .list-right .list-top {
+            background-color: #ebebeb; }
+            #game_div .award-page .award-list .list .list-right .list-top .collection-container {
+              width: 100%;
+              height: 100%;
+              overflow: auto; }
+              #game_div .award-page .award-list .list .list-right .list-top .collection-container .collection-wrap {
+                height: 100%;
+                width: 3.01rem; }
+                #game_div .award-page .award-list .list .list-right .list-top .collection-container .collection-wrap div {
+                  width: 0.36rem;
+                  height: 0.36rem;
+                  float: left;
+                  margin-top: 0.05rem;
+                  margin-right: 0.07rem; }
+                  #game_div .award-page .award-list .list .list-right .list-top .collection-container .collection-wrap div:nth-of-type(1) {
+                    background-image: url("../images/bar_zhu.png"); }
+                  #game_div .award-page .award-list .list .list-right .list-top .collection-container .collection-wrap div:nth-of-type(2) {
+                    background-image: url("../images/bar_xin.png"); }
+                  #game_div .award-page .award-list .list .list-right .list-top .collection-container .collection-wrap div:nth-of-type(3) {
+                    background-image: url("../images/bar_nian.png"); }
+                  #game_div .award-page .award-list .list .list-right .list-top .collection-container .collection-wrap div:nth-of-type(4) {
+                    background-image: url("../images/bar_kuai.png"); }
+                  #game_div .award-page .award-list .list .list-right .list-top .collection-container .collection-wrap div:nth-of-type(5) {
+                    background-image: url("../images/bar_le.png"); }
+                  #game_div .award-page .award-list .list .list-right .list-top .collection-container .collection-wrap div:nth-of-type(6) {
+                    background-image: url("../images/bar_kuai.png"); }
+                  #game_div .award-page .award-list .list .list-right .list-top .collection-container .collection-wrap div:nth-of-type(7) {
+                    background-image: url("../images/bar_le.png"); }
+          #game_div .award-page .award-list .list .list-right .list-bottom {
+            font-size: 0;
+            line-height: 0.48rem; }
+            #game_div .award-page .award-list .list .list-right .list-bottom span {
+              vertical-align: top;
+              display: inline-block;
+              font-size: 0.14rem; }
+            #game_div .award-page .award-list .list .list-right .list-bottom .gift-name {
+              width: 0.86rem;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              margin-right: 0.08rem;
+              color: #757085; }
+            #game_div .award-page .award-list .list .list-right .list-bottom .gift-number {
+              color: #6d6681;
+              width: 0.86rem;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              margin-right: 0.08rem; }
+            #game_div .award-page .award-list .list .list-right .list-bottom .gift-change {
+              width: 0.58rem;
+              height: 0.3rem;
+              line-height: 0.3rem;
+              text-align: center;
+              font-size: 0.14rem;
+              color: #fff;
+              background-color: #3fb5ac;
+              display: inline-block;
+              border-radius: 0.04rem;
+              margin-top: 0.09rem; }
   #game_div .first-collection-me {
     display: none;
     background-color: rgba(0, 0, 0, 0.7);
@@ -417,5 +532,76 @@
       text-align: center;
       margin: 0 auto;
       background-image: url("../images/yellow_btn.png"); }
+  #game_div .mask-mask {
+    z-index: 999;
+    display: none; }
+  #game_div .fadeInDown {
+    animation: fadeInDown 0.8s;
+    -webkit-animation: fadeInDown 0.8s; }
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+  #game_div .fadeOutUp {
+    animation: fadeOutUp 0.8s;
+    -webkit-animation: fadeOutUp 0.8s; }
+@-webkit-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); } }
+@keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); } }
+  #game_div .overlayFadeOut {
+    animation: overlayFadeOut 0.8s;
+    -webkit-animation: overlayFadeOut 0.8s; }
+@-webkit-keyframes overlayFadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes overlayFadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+  #game_div .overlayFadeIn {
+    animation: overlayFadeIn 0.8s;
+    -webkit-animation: overlayFadeIn 0.8s; }
+@-webkit-keyframes overlayFadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes overlayFadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 /*# sourceMappingURL=main.css.map */

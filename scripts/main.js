@@ -1,3 +1,8 @@
+// 整份代码写的太零散了，要找时间把代码分离到几个模块中
+// 轮播插件作为一份
+// 页面切换可以作为一份
+// 数据绑定和初始化页面也可以分离
+
 $(function() {
     // 全局变量
 
@@ -26,11 +31,101 @@ $(function() {
     };
 
     Collection.prototype.init = function() {
+        this.initSelector();
         this.prevent();
         this.configData();
         this.newSlide();
         this.bindSlide();
         this.configHighLight();
+        this.bindPageEvent();
+    };
+
+    Collection.prototype.initSelector = function() {
+        this.gameDiv = $('#game_div');
+        this.mainPage = this.gameDiv.find('.main-page');
+        this.mainPageMe = this.mainPage.find('.me');
+        this.mainPageOther = this.mainPage.find('.other');
+
+        this.maskPage = this.gameDiv.find('.mask-mask');
+
+        this.conditionPage = this.gameDiv.find('.condition-page');
+        this.awardPage = this.gameDiv.find('.award-page');
+        this.publicPage = this.gameDiv.find('.collection-public-platform');
+    };
+
+    // 执行页面切换时的遮罩，防止切换页面过程中用户点击
+    Collection.prototype.maskHover = function() {
+        this.maskPage.show();
+        setTimeout(function() {
+            this.maskPage.hide();
+        }.bind(this), 800);
+    };
+
+    // 页面切换时执行的动画class新增以及删除 
+    Collection.prototype.animateClass = function(element, className, isHide) {
+        element.addClass(className);
+        setTimeout(function() {
+            element.removeClass(className);
+            if (isHide) {
+                element.hide();
+            }
+        }, 800);
+    }
+
+    Collection.prototype.bindPageEvent = function() {
+        var self = this;
+
+        /**
+         * 绑定主页面事件
+         * 我的事件
+         */
+        // 绑定点击集字动态按钮显示集字动态页面
+        var conditionPageShow = this.mainPage.find('.condition');
+        conditionPageShow.on(event_tap, function() {
+            self.maskHover();
+            self.conditionPage.show();
+            self.animateClass(self.conditionPage, 'fadeInDown');
+        });
+        // 绑定集字动态页面的关闭事件
+        var conditionPageClose = this.conditionPage.find('.close-icon');
+        conditionPageClose.on(event_tap, function() {
+            self.maskHover();
+            self.animateClass(self.conditionPage, 'fadeOutUp', true);
+        });
+
+        // 绑定兑奖中心按钮的显示兑奖中心页面
+        var awardPageShow = this.mainPageMe.find('.award');
+        awardPageShow.on(event_tap, function() {
+            self.maskHover();
+            self.awardPage.show();
+            self.animateClass(self.awardPage, 'fadeInDown');
+        });
+        // 绑定兑奖中心页面的关闭按钮事件
+        var awardPageClose = this.awardPage.find('.close-icon');
+        awardPageClose.on(event_tap, function() {
+            self.maskHover();
+            self.animateClass(self.awardPage, 'fadeOutUp', true);
+        });
+
+
+
+        /**
+         * 绑定主页面事件
+         * 其他人视角的事件
+         */
+        // 绑定我要集字事件
+        var launchBtn = this.mainPageOther.find('.launch');
+        launchBtn.on(event_tap, function() {
+            self.maskHover();
+            self.publicPage.show();
+            self.animateClass(self.publicPage, 'fadeInDown');
+        });
+        // 绑定公众号页面查看他人进度事件－即关闭当前页面
+        var launchBack = this.publicPage.find('.watch-condition');
+        launchBack.on(event_tap, function() {
+            self.maskHover();
+            self.animateClass(self.publicPage, 'fadeOutUp', true);
+        })
     };
 
     // 配置高亮选项
@@ -77,8 +172,8 @@ $(function() {
     Collection.prototype.configData = function() {
         var self = this;
         // 配置顶部时间以及集齐人数的文字
-        var timeText='<p class="timeText">还剩：2016年12月18日00分00秒</p>';
-        var totalText='<p class="totalText">总计99999人集齐了所有字</p>';
+        var timeText = '<p class="timeText">还剩：2016年12月18日00分00秒</p>';
+        var totalText = '<p class="totalText">总计99999人集齐了所有字</p>';
         $('#game_div header').prepend(totalText).prepend(timeText);
         // 配置大图
         var swiper_wrapper = $('#game_div .swiper .swiper-wrapper');
@@ -96,21 +191,6 @@ $(function() {
         // 配置下面的列表小图
         var bar;
         var bar_container = $('#game_div .bar-container');
-        // if (leng <= 5) {
-        //     // 如果长度小于5此时不需要做小图的轮播
-        //     bar = $('<div class="bar"></div>');
-        //     for (var i = 0; i < leng; i++) {
-        //         var element = $('<span></span>');
-        //         element.attr('data-index', i);
-        //         if (collectionIndex[i]) {
-        //             element.css('background-image', 'url(' + config.bar[i] + ')');
-        //         } else {
-        //             element.css('background-image', 'url(' + config.mask[i] + ')');
-        //         }
-        //         bar.append(element);
-        //     }
-        //     bar_container.prepend(bar);
-        // } else {
         // 长度大于5需要做轮播
         var swiper_wrapper = $('.bar-container .swiper-wrapper');
         for (var i = 0; i < leng; i++) {
@@ -136,9 +216,6 @@ $(function() {
         }
         // 初始化轮播
         this.newBarSlide();
-        // }
-
-
     };
 
     Collection.prototype.newBarSlide = function() {
@@ -198,7 +275,7 @@ $(function() {
     // 初始化slide插件
     Collection.prototype.newSlide = function() {
         var self = this;
-        var slide = $('.swiper-slide');
+        var slide = $('.swiper .swiper-slide');
         // 初始的索引
         var initIndex = 0;
         this.swiper = new Swiper('.swiper .swiper-container', {
@@ -209,6 +286,7 @@ $(function() {
             paginationClickable: true,
             spaceBetween: -50,
             onSlideChangeStart: function(swiper) {
+                self.bindChangeHighLight(swiper);
                 var index = swiper.activeIndex;
                 slide.eq(index).css({
                     'transform': 'scale(1)',
@@ -238,6 +316,20 @@ $(function() {
             },
         });
     };
+
+    Collection.prototype.bindChangeHighLight = function(swiper) {
+        var slide = $('.swiper .swiper-slide');
+        var index = swiper.activeIndex;
+        var slideNow = slide.eq(index);
+        var dataIndex = slideNow.attr('data-index');
+        var bar_slide = $('.bar-container .swiper-slide');
+        var num = Math.floor(dataIndex / 5);
+        var i = dataIndex % 5;
+        bar_slide.find('i').removeClass('select');
+        bar_slide.eq(num).find('span').eq(i).find('i').addClass('select');
+    };
+
+
 
     // 绑定slide事件
     Collection.prototype.bindSlide = function() {
